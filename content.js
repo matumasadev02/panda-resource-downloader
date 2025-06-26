@@ -124,7 +124,7 @@
      * Finds a node in the tree by its path.
      */
     function findNodeByPath(fileTree, directoryPath) {
-        // 末尾スラッシュを統一
+        // Normalize the trailing slash
         const normalizedPath = directoryPath.endsWith('/') ? directoryPath : directoryPath + '/';
         const expectedUrl = `https://panda.ecs.kyoto-u.ac.jp/access${normalizedPath}`;
         
@@ -132,7 +132,7 @@
         console.log(`[findNodeByPath] Expected URL: ${expectedUrl}`);
         
         function searchInTree(node) {
-            // 両方のURLを正規化して比較
+            // Normalize and compare both URLs
             const nodeUrl = node.url;
             const normalizedNodeUrl = nodeUrl.endsWith('/') ? nodeUrl : nodeUrl + '/';
             
@@ -143,7 +143,7 @@
                 return node;
             }
             
-            // URLデコードして比較も試す
+            // Also try comparing after URL decoding
             try {
                 const decodedNodeUrl = decodeURIComponent(normalizedNodeUrl);
                 const decodedExpectedUrl = decodeURIComponent(expectedUrl);
@@ -152,7 +152,7 @@
                     return node;
                 }
             } catch (e) {
-                // デコードエラーは無視
+                // Ignore decoding errors
             }
             
             if (node.children) {
@@ -199,7 +199,7 @@
             }
         }
         
-        // 別のアプローチ：onclick属性からパスを抽出
+        // Another approach: extract the path from the onclick attribute
         const onclickLinks = row.querySelectorAll('a[onclick*="toggleFolder"]');
         for (const link of onclickLinks) {
             const onclick = link.getAttribute('onclick');
@@ -334,7 +334,7 @@
                 }
             });
 
-            // 最上位のディレクトリにも一括ダウンロードボタンを追加
+            // Add a bulk download button to the top-level directory as well
             const actionBar = document.querySelector(".Mrphs-sakai-resources .act");
             if (actionBar && Object.keys(fileTree).length > 0) {
                 const downloadAllButton = document.createElement("button");
@@ -351,7 +351,7 @@
                     downloadAllButton.disabled = true;
 
                     try {
-                        // ファイルツリー全体からすべてのファイルを収集
+                        // Collect all files from the entire file tree
                         let allFiles = [];
                         for (const rootKey in fileTree) {
                             const rootNode = fileTree[rootKey];
@@ -369,7 +369,7 @@
 
                         const zipWriter = new ZipWriter(new BlobWriter("application/zip"));
 
-                        // プログレス表示
+                        // Progress display
                         let processed = 0;
                         await Promise.all(allFiles.map(async (file) => {
                             try {
