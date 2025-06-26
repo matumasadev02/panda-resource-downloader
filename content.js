@@ -237,7 +237,7 @@
 
             document.querySelectorAll(".Mrphs-sakai-resources .table tr").forEach(row => {
                 try {
-                    const isFolder = row.querySelector("td.specialLink > span.sr-only")?.textContent.includes("フォルダ");
+                    const isFolder = row.querySelector("td.specialLink > a.fa")?.classList.contains("fa-folder");
                     if (!isFolder) return;
 
                     const folderName = row.querySelector("td.specialLink > a > span.resource-name")?.textContent.trim();
