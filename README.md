@@ -117,7 +117,7 @@ PandAのAPIから取得したリソース情報を階層構造に変換し、正
 ```
 MIT License
 
-Copyright (c) 2025 PandA Resource Downloader
+Copyright (c) 2025 matumasadev02
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
