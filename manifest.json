@@ -3,6 +3,9 @@
   "name": "PandA Resource Downloader",
   "version": "1.0",
   "description": "Adds a download link to PandA resource lists.",
+  "icons": {
+    "128": "128.png"
+  },
   "content_scripts": [
     {
       "matches": ["https://panda.ecs.kyoto-u.ac.jp/*"],
