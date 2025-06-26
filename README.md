@@ -112,7 +112,7 @@ PandAのAPIから取得したリソース情報を階層構造に変換し、正
 
 ### 使用ライブラリ
 
-- **zip.js**: MITライセンス ([GitHub](https://github.com/gildas-lormeau/zip.js))
+- **zip.js**: BSD 3-Clause License ([GitHub](https://github.com/gildas-lormeau/zip.js))
 
 ```
 BSD 3-Clause License
