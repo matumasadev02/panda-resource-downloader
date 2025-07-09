@@ -30,7 +30,7 @@
 ## 技術仕様
 
 - **対象サイト**: `https://panda.ecs.kyoto-u.ac.jp/*`
-- **ZIP圧縮ライブラリ**: zip.js（ファイルに埋め込み済み）
+- **ZIP圧縮ライブラリ**: zip.js
 - **API**: PandAのDirect Content API (`/direct/content/site/{site_id}.json`)
 - **ファイル構造**: 階層構造を保持してZIPファイルを作成
 
@@ -39,7 +39,8 @@
 ```
 panda_resource_downloader/
 ├── manifest.json          # 拡張機能の設定ファイル
-├── content.js             # メインスクリプト（zip.js埋め込み済み）
+├── content.js             # メインスクリプト
+├── zip.min.js             # zip.js
 └── README.md              # このファイル
 ```
 
@@ -96,7 +97,7 @@ PandAのAPIから取得したリソース情報を階層構造に変換し、正
 - **buildFileTree()**: API応答をツリー構造に変換
 - **getFilesRecursively()**: ツリーから全ファイルを再帰的に取得
 - **findNodeByPath()**: パスでノードを検索
-- **zip.js**: ブラウザ内でのZIP作成（ライブラリ埋め込み済み）
+- **zip.js**: ブラウザ内でのZIP作成
 
 ### カスタマイズ
 
