@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": ["https://panda.ecs.kyoto-u.ac.jp/*"],
-      "js": ["content.js"]
+      "js": ["zip.min.js","content.js"]
     }
   ]
 }
