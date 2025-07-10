@@ -1,9 +1,6 @@
-// ==UserScript==
-// --- PandA Resource Downloader ---
 (function() {
     'use strict';
 
-    // Use the embedded zip.js library directly
     const {
         ZipWriter,
         BlobReader,
